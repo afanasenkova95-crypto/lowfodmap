@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Low FODMAP Kitchen</title>
+<meta name="description" content="A personal low FODMAP recipe book and food reference.">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="theme-color" content="#6E3A6F">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="LFM Kitchen">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236E3A6F'/><text x='50' y='72' font-size='58' text-anchor='middle' fill='%23fff' font-family='Georgia,serif'>L</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+/* ---------------------------------------------------------------
+   Low FODMAP Kitchen
+   Palette : plum accent (identity) kept strictly separate from
+             green/red, which carry meaning only — safe vs avoid.
+   Type    : Fraunces (display) / IBM Plex Sans (text) /
+             IBM Plex Mono (portions & data, tabular).
+   --------------------------------------------------------------- */
+:root{
+  --bg:#FAF8FA; --surface:#FFFFFF; --surface-2:#F2EEF3; --line:#E7E1E9;
+  --ink:#211C24; --ink-2:#574F5C; --muted:#8B8290;
+  --accent:#6E3A6F; --accent-soft:#F4ECF5;
+  --safe:#1B7A4E; --safe-soft:#EAF4EE;
+  --avoid:#A63A2B; --avoid-soft:#FBEDEA;
+  --shadow:0 1px 1px rgba(33,28,36,.03), 0 6px 20px rgba(33,28,36,.05);
+  --r:10px; --nav-h:62px;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --disp:"Fraunces",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#16131A; --surface:#1E1A23; --surface-2:#272130; --line:#342D3C;
+    --ink:#F1ECF2; --ink-2:#C0B7C6; --muted:#8A8092;
+    --accent:#CFA0D2; --accent-soft:#2A1E2D;
+    --safe:#6CC494; --safe-soft:#152A1F;
+    --avoid:#E7907E; --avoid-soft:#2B1915;
+    --shadow:0 1px 1px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16131A; --surface:#1E1A23; --surface-2:#272130; --line:#342D3C;
+  --ink:#F1ECF2; --ink-2:#C0B7C6; --muted:#8A8092;
+  --accent:#CFA0D2; --accent-soft:#2A1E2D;
+  --safe:#6CC494; --safe-soft:#152A1F;
+  --avoid:#E7907E; --avoid-soft:#2B1915;
+  --shadow:0 1px 1px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--sans);
+  font-size:15.5px; line-height:1.6;
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom));
+  overscroll-behavior-y:none; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.15;margin:0;text-wrap:balance}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.wrap{max-width:660px;margin:0 auto;padding:0 18px}
+.lab{
+  font-family:var(--mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:40;background:var(--bg);
+  padding-top:env(safe-area-inset-top);
+  border-bottom:1px solid transparent;transition:border-color .2s;
+}
+header.scrolled{border-bottom-color:var(--line)}
+.hrow{display:flex;align-items:center;gap:10px;min-height:54px}
+.htitle{
+  font-family:var(--disp);font-size:17px;font-weight:600;flex:1;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:opacity .18s;
+}
+.iconbtn{
+  width:42px;height:42px;flex:none;display:grid;place-items:center;
+  border-radius:50%;color:var(--ink-2);transition:transform .12s,background .15s;
+}
+.iconbtn:active{transform:scale(.9)}
+.iconbtn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round}
+.iconbtn.on{color:var(--avoid)}
+.iconbtn.on svg{fill:currentColor;stroke:currentColor}
+
+/* ---------- home ---------- */
+.hero{padding:16px 0 4px}
+.hero .eyebrow{color:var(--accent);margin-bottom:12px;display:block}
+.hero h1{font-size:33px;letter-spacing:-.015em}
+.hero p{color:var(--ink-2);margin:10px 0 0;font-size:15px;max-width:34em}
+.sectlabel{
+  color:var(--muted);margin:32px 0 14px;display:flex;align-items:center;gap:12px;
+}
+.sectlabel:after{content:"";flex:1;height:1px;background:var(--line)}
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cat{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:16px 15px 14px;display:block;transition:transform .12s,border-color .15s;
+}
+.cat:active{transform:scale(.975)}
+.cat .ic{font-size:22px;display:block;margin-bottom:9px;line-height:1}
+.cat .nm{font-family:var(--disp);font-size:17px;font-weight:600;letter-spacing:-.01em}
+.cat .bl{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+.cat .ct{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:10px;font-weight:500}
+
+/* ---------- recipe cards ---------- */
+.list{display:flex;flex-direction:column;gap:10px;padding-bottom:26px}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;display:flex;transition:transform .12s;
+}
+.card:active{transform:scale(.985)}
+.card .thumb{
+  width:88px;flex:none;background:var(--surface-2) center/cover no-repeat;
+  display:grid;place-items:center;font-size:24px;
+}
+.card .body{padding:13px 15px;flex:1;min-width:0}
+.card h3{font-size:16.5px;margin-bottom:6px;letter-spacing:-.01em}
+.meta{
+  font-family:var(--mono);font-size:11.5px;color:var(--muted);
+  display:flex;gap:14px;font-variant-numeric:tabular-nums;
+}
+.pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.pill{
+  font-size:11px;padding:3px 9px;border-radius:5px;
+  background:var(--surface-2);color:var(--ink-2);white-space:nowrap;
+}
+.pill.cat{background:var(--accent-soft);color:var(--accent);font-weight:500}
+
+/* ---------- recipe detail ---------- */
+.rhero{
+  margin:6px 0 22px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);
+  background:var(--surface-2);aspect-ratio:16/9;display:grid;place-items:center;
+  font-size:46px;background-size:cover;background-position:center;
+}
+.rtitle{font-size:27px;letter-spacing:-.02em}
+.rmeta{display:flex;gap:0;margin:18px 0 24px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.stat{flex:1;text-align:center;padding:11px 6px;background:var(--surface)}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat b{
+  display:block;font-family:var(--mono);font-size:16px;font-weight:500;
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em;
+}
+.stat span{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* field note — label sits on the rule, like a specimen card */
+.fieldnote{
+  position:relative;border:1px solid var(--line);border-radius:var(--r);
+  padding:19px 17px 16px;margin:24px 0;font-size:14.5px;line-height:1.6;color:var(--ink-2);
+}
+.fieldnote>.lab{
+  position:absolute;top:-7px;left:13px;background:var(--bg);padding:0 8px;color:var(--accent);
+}
+.fieldnote ul{margin:0;padding-left:16px}
+.fieldnote li+li{margin-top:9px}
+.fieldnote.safe{border-color:color-mix(in srgb,var(--safe) 35%,var(--line))}
+.fieldnote.safe>.lab{color:var(--safe)}
+
+/* nutrition ledger */
+.nutri{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:24px 0}
+.nutri table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12.5px;
+  font-variant-numeric:tabular-nums}
+.nutri th,.nutri td{padding:9px 14px;text-align:right;border-bottom:1px solid var(--line)}
+.nutri tr:last-child th,.nutri tr:last-child td{border-bottom:0}
+.nutri th{font-weight:500;text-align:left;color:var(--ink-2);font-family:var(--sans);font-size:13.5px}
+.nutri thead th,.nutri thead td{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--muted);background:var(--surface-2);font-weight:500;
+}
+.nutri td.main{color:var(--ink);font-weight:500}
+.nutri td.alt{color:var(--muted)}
+.nutri tr.kcal td.main{color:var(--accent)}
+.nutri .foot{padding:9px 14px;font-size:11.5px;color:var(--muted);background:var(--surface-2);
+  border-top:1px solid var(--line);text-align:left;line-height:1.45}
+
+/* photo-only recipes */
+.photoonly{
+  border:1px dashed var(--line);border-radius:var(--r);padding:22px 18px;margin:24px 0;
+  text-align:center;color:var(--muted);font-size:14px;line-height:1.55;
+}
+.pshot{width:100%;border-radius:var(--r);border:1px solid var(--line);display:block;margin:6px 0 0}
+.pill.photo{background:var(--surface-2);color:var(--muted)}
+
+/* personal exceptions panel */
+.personal{
+  border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line));
+  border-radius:var(--r);padding:19px 17px 15px;margin:0 0 22px;position:relative;
+  background:var(--accent-soft);
+}
+.personal>.lab{position:absolute;top:-7px;left:13px;background:var(--bg);padding:0 8px;color:var(--accent)}
+.personal .pitem{padding:8px 0;border-bottom:1px solid color-mix(in srgb,var(--accent) 18%,transparent)}
+.personal .pitem:last-child{border-bottom:0;padding-bottom:0}
+.personal .pn{font-size:14.5px;font-weight:500}
+.personal .pd{font-size:12.5px;color:var(--ink-2);margin-top:2px;line-height:1.5}
+
+h2.sec{font-size:20px;margin:30px 0 12px;letter-spacing:-.01em}
+ul.ing{list-style:none;margin:0;padding:0}
+ul.ing li{
+  padding:11px 2px 11px 32px;border-bottom:1px solid var(--line);position:relative;
+  cursor:pointer;transition:opacity .15s;
+}
+ul.ing li:before{
+  content:"";position:absolute;left:1px;top:14px;width:18px;height:18px;
+  border:1.6px solid var(--line);border-radius:4px;transition:.15s;
+}
+ul.ing li.done{opacity:.38;text-decoration:line-through}
+ul.ing li.done:before{background:var(--safe);border-color:var(--safe)}
+ul.ing li.done:after{
+  content:"";position:absolute;left:6px;top:17px;width:6px;height:10px;
+  border:solid #fff;border-width:0 1.8px 1.8px 0;transform:rotate(42deg);
+}
+ul.ing .sub{display:block;font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.45}
+ul.ing li.head{
+  padding:18px 0 6px;border-bottom:1px solid var(--line);cursor:default;
+  font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);
+}
+ul.ing li.head:first-child{padding-top:4px}
+ul.ing li.head:before,ul.ing li.head:after{display:none}
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 20px 38px;line-height:1.65}
+ol.steps li:before{
+  content:counter(s);position:absolute;left:0;top:1px;width:25px;height:25px;
+  border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--accent);
+  display:grid;place-items:center;font-family:var(--mono);font-size:12px;font-weight:500;
+}
+ol.steps li:not(:last-child):after{
+  content:"";position:absolute;left:12.5px;top:29px;bottom:5px;width:1px;background:var(--line);
+}
+
+/* ---------- search ---------- */
+.searchbar{position:relative;margin:6px 0 13px}
+.searchbar input{
+  width:100%;padding:12px 14px 12px 40px;font-size:16px;font-family:var(--sans);
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  color:var(--ink);outline:none;transition:border-color .15s;
+}
+.searchbar input::placeholder{color:var(--muted)}
+.searchbar input:focus{border-color:var(--accent)}
+.searchbar svg{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  width:16px;height:16px;fill:none;stroke:var(--muted);stroke-width:1.9;stroke-linecap:round;
+}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:2px 18px 18px;margin:0 -18px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  flex:none;font-size:12.5px;padding:6px 13px;border-radius:6px;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink-2);white-space:nowrap;
+}
+.chip.on{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:500}
+
+/* ---------- foods ledger ---------- */
+.acc{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  margin-bottom:9px;overflow:hidden;
+}
+.acc>button{width:100%;display:flex;align-items:center;gap:12px;padding:15px 16px;text-align:left}
+.acc>button .ic{font-size:19px;line-height:1}
+.acc>button .nm{flex:1;font-family:var(--disp);font-size:16.5px;font-weight:600}
+.acc>button .tally{display:flex;gap:10px;font-family:var(--mono);font-size:11.5px;font-weight:500;
+  font-variant-numeric:tabular-nums}
+.acc>button .tally span{display:flex;align-items:center;gap:4px}
+.acc>button .tally span:before{content:"";width:6px;height:6px;border-radius:2px;background:currentColor}
+.acc>button .tally .g{color:var(--safe)}
+.acc>button .tally .r{color:var(--avoid)}
+.acc>button .arw{width:14px;height:14px;fill:none;stroke:var(--muted);stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.acc.open>button .arw{transform:rotate(90deg)}
+.acc .panel{display:none;padding:0 16px 10px}
+.acc.open .panel{display:block}
+.grp{margin-bottom:18px}
+.grp:last-child{margin-bottom:8px}
+.grp .hd{display:flex;align-items:center;gap:7px;margin-bottom:8px;padding-bottom:7px;
+  border-bottom:1px solid var(--line)}
+.grp .sq{width:8px;height:8px;border-radius:2px;background:currentColor;flex:none}
+.grp.ok .hd{color:var(--safe)}
+.grp.no .hd{color:var(--avoid)}
+.food{
+  padding:8px 0;border-bottom:1px solid var(--line);
+  display:flex;gap:12px;justify-content:space-between;align-items:baseline;
+}
+.food:last-child{border-bottom:0}
+.food .n{flex:1;font-size:14.5px}
+.food .p{
+  font-family:var(--mono);font-size:11.5px;color:var(--ink-2);text-align:right;
+  flex:none;max-width:46%;font-variant-numeric:tabular-nums;
+}
+.food .why{font-size:12.5px;color:var(--muted);text-align:right;flex:none;max-width:52%}
+.food .tip{display:block;font-size:12.5px;color:var(--accent);margin-top:2px;line-height:1.45}
+.disclaimer{
+  border:1px solid var(--line);border-radius:var(--r);padding:16px 17px;
+  font-size:13.5px;color:var(--ink-2);line-height:1.6;margin:20px 0 22px;background:var(--surface);
+}
+.disclaimer b{color:var(--ink)}
+
+.empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:14.5px}
+.empty svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.4;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.5;margin-bottom:14px}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:color-mix(in srgb, var(--bg) 86%, transparent);
+  -webkit-backdrop-filter:saturate(1.5) blur(16px);backdrop-filter:saturate(1.5) blur(16px);
+  border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);
+}
+nav .in{display:flex;max-width:660px;margin:0 auto}
+nav a{
+  flex:1;height:var(--nav-h);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:4px;color:var(--muted);transition:color .15s;
+}
+nav a svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round}
+nav a .t{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase}
+nav a.on{color:var(--accent)}
+@media(min-width:540px){ .cats{grid-template-columns:repeat(3,1fr)} }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap hrow">
+    <button class="iconbtn" id="back" style="display:none" aria-label="Back">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <div class="htitle" id="htitle">Low FODMAP Kitchen</div>
+    <button class="iconbtn" id="favbtn" style="display:none" aria-label="Save recipe">
+      <svg viewBox="0 0 24 24"><path d="M12 20.5l-1.5-1.35C5.4 14.6 2 11.55 2 7.8 2 4.75 4.4 2.4 7.4 2.4c1.7 0 3.3.8 4.6 2.3 1.3-1.5 2.9-2.3 4.6-2.3 3 0 5.4 2.35 5.4 5.4 0 3.75-3.4 6.8-8.5 11.35z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="app" class="wrap"></main>
+
+<nav>
+  <div class="in">
+    <a href="#/home" data-tab="home" aria-label="Recipes">
+      <svg viewBox="0 0 24 24"><path d="M4 4.5A1.5 1.5 0 015.5 3H11v18H5.5A1.5 1.5 0 014 19.5zM20 4.5A1.5 1.5 0 0018.5 3H13v18h5.5a1.5 1.5 0 001.5-1.5z"/></svg>
+      <span class="t">Recipes</span></a>
+    <a href="#/search" data-tab="search" aria-label="Search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.9-3.9"/></svg>
+      <span class="t">Search</span></a>
+    <a href="#/foods" data-tab="foods" aria-label="Food lists">
+      <svg viewBox="0 0 24 24"><path d="M20 4c0 8.5-4.5 13-11 13H5c0-8 4.5-13 11-13z"/><path d="M4 21c1.5-5 4-8 8-10.5"/></svg>
+      <span class="t">Foods</span></a>
+    <a href="#/saved" data-tab="saved" aria-label="Saved">
+      <svg viewBox="0 0 24 24"><path d="M12 20.5l-1.5-1.35C5.4 14.6 2 11.55 2 7.8 2 4.75 4.4 2.4 7.4 2.4c1.7 0 3.3.8 4.6 2.3 1.3-1.5 2.9-2.3 4.6-2.3 3 0 5.4 2.35 5.4 5.4 0 3.75-3.4 6.8-8.5 11.35z"/></svg>
+      <span class="t">Saved</span></a>
+  </div>
+</nav>
+
+<script src="recipes.js"></script>
+<script src="foods.js"></script>
+<script>
+/* ===================== state ===================== */
+const store = {
+  get favs(){ try{ return JSON.parse(localStorage.getItem('lfm_favs')||'[]') }catch(e){ return [] } },
+  set favs(v){ try{ localStorage.setItem('lfm_favs', JSON.stringify(v)) }catch(e){} },
+  toggle(id){ const f=this.favs, i=f.indexOf(id); i<0?f.push(id):f.splice(i,1); this.favs=f; return i<0 },
+  has(id){ return this.favs.includes(id) }
+};
+let query='', activeTag='', hdrQuiet=false;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const byCat = c => RECIPES.filter(r => r.category === c);
+const find  = id => RECIPES.find(r => r.id === id);
+const icon  = c => (CATEGORIES.find(x=>x.name===c)||{}).icon || '·';
+const ALL_TAGS = [...new Set(RECIPES.flatMap(r => r.tags||[]))].sort();
+
+/* ===================== components ===================== */
+function card(r){
+  const thumb = r.image
+    ? `<div class="thumb" style="background-image:url('${esc(r.image)}')"></div>`
+    : `<div class="thumb">${esc(icon(r.category))}</div>`;
+  return `<a class="card" href="#/recipe/${esc(r.id)}">
+    ${thumb}
+    <div class="body">
+      <h3>${esc(r.title)}</h3>
+      <div class="meta">${r.photoOnly
+        ? '<span>photo</span>'
+        : `<span>${r.time} min</span><span>serves ${r.servings}</span>${
+            r.nutrition?`<span>${r.nutrition.kcal} kcal</span>`:''}`}</div>
+      <div class="pills">
+        <span class="pill cat">${esc(r.category)}</span>
+        ${(r.tags||[]).slice(0,2).map(t=>`<span class="pill">${esc(t)}</span>`).join('')}
+      </div>
+    </div></a>`;
+}
+const empty = (path,msg) => `<div class="empty">
+  <svg viewBox="0 0 24 24">${path}</svg><div>${esc(msg)}</div></div>`;
+const ICO = {
+  pan:'<circle cx="10" cy="12" r="7"/><path d="M17 12h5"/>',
+  q:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.9-3.9"/>',
+  heart:'<path d="M12 20.5l-1.5-1.35C5.4 14.6 2 11.55 2 7.8 2 4.75 4.4 2.4 7.4 2.4c1.7 0 3.3.8 4.6 2.3 1.3-1.5 2.9-2.3 4.6-2.3 3 0 5.4 2.35 5.4 5.4 0 3.75-3.4 6.8-8.5 11.35z"/>'
+};
+
+/* ===================== views ===================== */
+const views = {
+
+home(){
+  const n = RECIPES.length;
+  return { title:'Low FODMAP Kitchen', quiet:true, back:false, html:`
+    <div class="hero">
+      <span class="eyebrow lab">Personal recipe book</span>
+      <h1>Low FODMAP Kitchen</h1>
+      <p>${n} recipe${n===1?'':'s'}, each one adapted for the low FODMAP diet, with the
+         portion limits that actually matter written on the page.</p>
+    </div>
+    <div class="sectlabel lab">Browse by meal</div>
+    <div class="cats">${CATEGORIES.map(c=>{
+      const k = byCat(c.name).length;
+      return `<a class="cat" href="#/cat/${encodeURIComponent(c.name)}">
+        <span class="ic">${c.icon}</span>
+        <div class="nm">${esc(c.name)}</div>
+        <div class="bl">${esc(c.blurb)}</div>
+        <div class="ct">${k} recipe${k===1?'':'s'}</div>
+      </a>`}).join('')}</div>
+    ${n?`<div class="sectlabel lab">Recently added</div>
+    <div class="list">${RECIPES.slice(-3).reverse().map(card).join('')}</div>`:''}`};
+},
+
+cat(name){
+  const rs = byCat(name);
+  return { title:name, back:true, html: rs.length
+    ? `<div class="list" style="padding-top:10px">${rs.map(card).join('')}</div>`
+    : empty(ICO.pan,'Nothing here yet — this category is waiting for recipes.') };
+},
+
+search(){
+  const q = query.trim().toLowerCase();
+  let rs = RECIPES;
+  if(activeTag) rs = rs.filter(r => (r.tags||[]).includes(activeTag));
+  if(q) rs = rs.filter(r =>
+    r.title.toLowerCase().includes(q) ||
+    r.category.toLowerCase().includes(q) ||
+    (r.tags||[]).some(t=>t.includes(q)) ||
+    r.ingredients.some(i=>i.item.toLowerCase().includes(q)));
+  return { title:'Search', back:false, html:`
+    <div class="searchbar">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.9-3.9"/></svg>
+      <input id="q" type="search" placeholder="Recipe or ingredient…" value="${esc(query)}"
+             autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search recipes">
+    </div>
+    <div class="chips">
+      <button class="chip ${activeTag?'':'on'}" data-tag="">All</button>
+      ${ALL_TAGS.map(t=>`<button class="chip ${activeTag===t?'on':''}" data-tag="${esc(t)}">${esc(t)}</button>`).join('')}
+    </div>
+    ${rs.length ? `<div class="list">${rs.map(card).join('')}</div>`
+                : empty(ICO.q,'No recipes match. Try a different word.')}`};
+},
+
+saved(){
+  const rs = RECIPES.filter(r => store.has(r.id));
+  return { title:'Saved', back:false, html: rs.length
+    ? `<div class="list" style="padding-top:10px">${rs.map(card).join('')}</div>`
+    : empty(ICO.heart,'Tap the heart on any recipe and it will show up here.') };
+},
+
+recipe(id){
+  const r = find(id);
+  if(!r) return { title:'Not found', back:true, html: empty(ICO.q,'That recipe does not exist.') };
+  const hero = r.image
+    ? `<div class="rhero" style="background-image:url('${esc(r.image)}')"></div>`
+    : `<div class="rhero">${esc(icon(r.category))}</div>`;
+  if(r.photoOnly){
+    return { title:r.title, back:true, favId:r.id, html:`
+      <h1 class="rtitle" style="margin-top:8px">${esc(r.title)}</h1>
+      <div class="pills" style="margin-top:12px">
+        <span class="pill cat">${esc(r.category)}</span>
+        <span class="pill photo">photo only</span>
+        ${(r.tags||[]).map(t=>`<span class="pill">${esc(t)}</span>`).join('')}
+      </div>
+      ${r.image?`<img class="pshot" src="${esc(r.image)}" alt="${esc(r.title)}" style="margin-top:18px">`
+               :`<div class="photoonly" style="margin-top:18px">No picture attached yet.</div>`}
+      ${(r.lfmNotes&&r.lfmNotes.length)?`<div class="fieldnote safe">
+        <span class="lab">Low FODMAP notes</span>
+        <ul>${r.lfmNotes.map(n=>`<li>${esc(n)}</li>`).join('')}</ul></div>`:
+        `<div class="photoonly">Saved as it came — no changes made, and it already fits the diet.</div>`}
+      <div style="height:16px"></div>`};
+  }
+  const nu = r.nutrition;
+  const per100 = (k,dp=1) => nu.serveWeight
+    ? (Math.round(nu[k] * 100 / nu.serveWeight * 10**dp) / 10**dp) : null;
+  const nutriTable = nu ? `<div class="nutri">
+      <table>
+        <thead><tr><th></th><td>per serving</td><td>per 100 g</td></tr></thead>
+        <tbody>
+          <tr class="kcal"><th>Calories</th><td class="main">${nu.kcal} kcal</td><td class="alt">${per100('kcal',0)??'—'} kcal</td></tr>
+          <tr><th>Protein</th><td class="main">${nu.protein} g</td><td class="alt">${per100('protein')??'—'} g</td></tr>
+          <tr><th>Carbs</th><td class="main">${nu.carbs} g</td><td class="alt">${per100('carbs')??'—'} g</td></tr>
+          <tr><th>Fat</th><td class="main">${nu.fat} g</td><td class="alt">${per100('fat')??'—'} g</td></tr>
+        </tbody>
+      </table>
+      <div class="foot">One serving weighs about ${nu.serveWeight} g. Figures are estimates from
+        standard ingredient data — close enough to track by, not lab-measured.</div>
+    </div>` : '';
+  return { title:r.title, back:true, favId:r.id, html:`
+    ${hero}
+    <h1 class="rtitle">${esc(r.title)}</h1>
+    <div class="pills" style="margin-top:12px">
+      <span class="pill cat">${esc(r.category)}</span>
+      ${(r.tags||[]).map(t=>`<span class="pill">${esc(t)}</span>`).join('')}
+    </div>
+    <div class="rmeta">
+      <div class="stat"><b>${r.time}</b><span>minutes</span></div>
+      <div class="stat"><b>${r.servings}</b><span>serves</span></div>
+      <div class="stat"><b>${r.ingredients.filter(i=>!i.heading).length}</b><span>items</span></div>
+    </div>
+    ${nutriTable}
+    ${(r.lfmNotes&&r.lfmNotes.length)?`<div class="fieldnote safe">
+      <span class="lab">Low FODMAP notes</span>
+      <ul>${r.lfmNotes.map(n=>`<li>${esc(n)}</li>`).join('')}</ul></div>`:''}
+    <h2 class="sec">Ingredients</h2>
+    <ul class="ing">${r.ingredients.map(i=> i.heading
+      ? `<li class="head">${esc(i.heading)}</li>`
+      : `<li>${esc(i.item)}${i.note?`<span class="sub">${esc(i.note)}</span>`:''}</li>`).join('')}</ul>
+    <h2 class="sec">Method</h2>
+    <ol class="steps">${r.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>
+    ${r.adaptedFrom?`<div class="fieldnote">
+      <span class="lab">What was changed</span>${esc(r.adaptedFrom)}</div>`:''}
+    <div style="height:16px"></div>`};
+},
+
+foods(){
+  return { title:'Safe & Not Safe', quiet:true, back:false, html:`
+    <div class="hero" style="padding-bottom:0">
+      <span class="eyebrow lab">Food reference</span>
+      <h1>Safe &amp; Not Safe</h1>
+      <p>What you can eat, and how much of it.</p>
+    </div>
+    <div class="disclaimer">
+      <b>Portion size is the whole game.</b> Most of these foods aren't simply safe or unsafe —
+      they're safe up to an amount, and going over turns a green food red. Compiled
+      ${esc(FOOD_LIST_UPDATED)} from Monash University guidance. Monash revises its thresholds as
+      new testing comes in, so check the app when something matters.
+    </div>
+    ${(typeof PERSONAL_OK !== 'undefined' && PERSONAL_OK.length) ? `<div class="personal">
+      <span class="lab">Your exceptions</span>
+      ${PERSONAL_OK.map(x=>`<div class="pitem">
+        <div class="pn">${esc(x.name)}</div>
+        <div class="pd">${esc(x.note)}</div></div>`).join('')}
+    </div>` : ''}
+    ${FOODS.map((f,i)=>`
+      <div class="acc" data-acc="${i}">
+        <button aria-expanded="false">
+          <span class="ic">${f.icon}</span>
+          <span class="nm">${esc(f.category)}</span>
+          <span class="tally"><span class="g">${f.safe.length}</span><span class="r">${f.avoid.length}</span></span>
+          <svg class="arw" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <div class="panel">
+          <div class="grp ok">
+            <div class="hd"><span class="sq"></span><span class="lab">Safe · ${f.safe.length}</span></div>
+            ${f.safe.map(x=>`<div class="food"><span class="n">${esc(x.name)}${
+              x.note?`<span class="tip">${esc(x.note)}</span>`:''}</span>
+              <span class="p">${esc(x.portion||'')}</span></div>`).join('')}
+          </div>
+          <div class="grp no">
+            <div class="hd"><span class="sq"></span><span class="lab">Avoid · ${f.avoid.length}</span></div>
+            ${f.avoid.map(x=>`<div class="food"><span class="n">${esc(x.name)}</span>
+              <span class="why">${esc(x.why||'')}</span></div>`).join('')}
+          </div>
+        </div>
+      </div>`).join('')}
+    <div style="height:14px"></div>`};
+}
+};
+
+/* ===================== router ===================== */
+function route(){
+  const h = (location.hash || '#/home').slice(2).split('/');
+  const key = h[0] || 'home', arg = h[1] ? decodeURIComponent(h[1]) : '';
+  const v = views[key] ? views[key](arg) : views.home();
+
+  document.getElementById('app').innerHTML = v.html;
+  const ht = document.getElementById('htitle');
+  ht.textContent = v.title;
+  hdrQuiet = !!v.quiet;
+  ht.style.opacity = hdrQuiet ? '0' : '1';
+  document.getElementById('back').style.display = v.back ? 'grid' : 'none';
+
+  const fb = document.getElementById('favbtn');
+  if(v.favId){
+    fb.style.display='grid'; fb.dataset.id=v.favId;
+    const on = store.has(v.favId);
+    fb.classList.toggle('on', on);
+    fb.setAttribute('aria-pressed', on);
+  } else fb.style.display='none';
+
+  const tab = ({recipe:'home', cat:'home'})[key] || key;
+  document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on', a.dataset.tab===tab));
+
+  window.scrollTo(0,0);
+  if(key==='search'){
+    const i = document.getElementById('q');
+    i.addEventListener('input', e=>{
+      query = e.target.value;
+      const p = i.selectionStart;
+      route();
+      const n = document.getElementById('q'); n.focus(); n.setSelectionRange(p,p);
+    });
+  }
+}
+
+/* ===================== interactions ===================== */
+document.addEventListener('click', e=>{
+  const chip = e.target.closest('.chip');
+  if(chip){ activeTag = chip.dataset.tag; route(); return; }
+  const accBtn = e.target.closest('.acc > button');
+  if(accBtn){
+    const open = accBtn.parentElement.classList.toggle('open');
+    accBtn.setAttribute('aria-expanded', open); return;
+  }
+  const ing = e.target.closest('ul.ing li');
+  if(ing){ ing.classList.toggle('done'); return; }
+});
+document.getElementById('back').addEventListener('click', ()=>history.back());
+document.getElementById('favbtn').addEventListener('click', function(){
+  const on = store.toggle(this.dataset.id);
+  this.classList.toggle('on', on);
+  this.setAttribute('aria-pressed', on);
+});
+addEventListener('scroll', ()=>{
+  document.getElementById('hdr').classList.toggle('scrolled', scrollY > 4);
+  if(hdrQuiet) document.getElementById('htitle').style.opacity = scrollY > 84 ? '1' : '0';
+}, {passive:true});
+addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>
