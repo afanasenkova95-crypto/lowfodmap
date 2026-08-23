@@ -46,6 +46,42 @@ const CATEGORIES = [
 const RECIPES = [
 
   {
+    id: "fit-brownie",
+    title: "Fit Brownie",
+    category: "Desserts",
+    time: 45,
+    servings: 6,
+    tags: ["quick", "high-protein", "low-fat", "vegetarian", "gluten-free"],
+    image: "images/fit-brownie.jpg",
+    ingredients: [
+      { heading: "Brownie base" },
+      { item: "4 large eggs (~220 g)" },
+      { item: "1 firm yellow banana (~100 g), mashed" },
+      { item: "70 g fine rice flour" },
+      { item: "60 g cocoa powder" },
+      { item: "100 ml lactose-free milk", note: "or almond milk" },
+      { item: "100 ml water" },
+      { item: "Stevia or erythritol to taste" },
+      { heading: "Chocolate glaze" },
+      { item: "15 g cocoa powder" },
+      { item: "2–3 tbsp boiling water" },
+      { item: "Stevia or erythritol to taste" }
+    ],
+    steps: [
+      "Blend the eggs, mashed banana, rice flour, cocoa, milk, water and sweetener until smooth. The batter will be very liquid — that is correct.",
+      "Oven: pour into a parchment-lined dish and bake at 180 °C for 30–35 minutes. Multicooker: the Bake setting for 35 minutes.",
+      "Whisk the glaze cocoa, sweetener and boiling water together until it looks like melted chocolate.",
+      "Cool the brownie completely, spread the glaze over, and cut into 6."
+    ],
+    nutrition: { serveWeight: 92, kcal: 115, protein: 7.0, carbs: 11.7, fat: 4.4 },
+    lfmNotes: [
+      "Cocoa is the only thing worth watching: 60 g in the batter plus 15 g in the glaze is 12.5 g a slice, just under the 2 tbsp serve. One slice is comfortable, two puts you over — the glaze is easy to forget when you are counting.",
+      "Banana at 17 g a slice, the most relaxed banana portion in the book. Rice flour has no limit.",
+      "115 kcal and 7 g of protein for a brownie, with no butter or oil anywhere in it. The eggs are doing all the structural work."
+    ]
+  },
+
+  {
     id: "banana-zapekanka",
     title: "Banana Cottage Cheese Zapekanka",
     category: "Breakfast",
