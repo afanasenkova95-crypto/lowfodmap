@@ -47,6 +47,357 @@ const CATEGORIES = [
 const RECIPES = [
 
   {
+    id: "ef-quinoa-shrimp-bowl",
+    title: "Quinoa Bowl with Shrimp & Egg",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-quinoa-shrimp-bowl.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-chicken-cutlets-sweet-potato",
+    title: "Chicken Cutlets with Sweet Potato Fries",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-chicken-cutlets-sweet-potato.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-tuna-rice-bowl",
+    title: "Tuna & Rice Bowl with Egg",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-tuna-rice-bowl.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-turkey-greens-bowl",
+    title: "Turkey & Greens Bowl with Yoghurt Dressing",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-turkey-greens-bowl.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-curd-waffles-salmon",
+    title: "Curd Waffles with Avocado & Salmon",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-curd-waffles-salmon.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-zucchini-curd-waffles",
+    title: "Zucchini, Curd & Cheese Waffles",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-zucchini-curd-waffles.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-chicken-broccoli-sweet-potato",
+    title: "Chicken with Broccoli & Sweet Potato",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-chicken-broccoli-sweet-potato.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-grapefruit-avocado-salad",
+    title: "Grapefruit, Avocado & Walnut Salad",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-grapefruit-avocado-salad.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-salmon-avocado-omelette",
+    title: "Salmon & Avocado Omelette",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-salmon-avocado-omelette.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-pasta-egg-whites-strawberries",
+    title: "Pasta with Egg Whites & Strawberries",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-pasta-egg-whites-strawberries.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-chicken-green-beans-prep",
+    title: "Chicken & Green Beans Prep",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-chicken-green-beans-prep.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-one-pot-tuna-egg-avocado",
+    title: "One-Pot Tuna, Egg & Avocado Bowl",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-one-pot-tuna-egg-avocado.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-oatmeal-egg-whites",
+    title: "Oatmeal with Boiled Egg Whites",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-oatmeal-egg-whites.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-salmon-roast-potatoes-arugula",
+    title: "Salmon with Roast Potatoes & Arugula",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-salmon-roast-potatoes-arugula.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-buckwheat-tuna-avocado",
+    title: "Buckwheat, Tuna & Avocado Bowl",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-buckwheat-tuna-avocado.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-basmati-salmon-truffle",
+    title: "Basmati, Salmon & Avocado with Truffle Oil",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-basmati-salmon-truffle.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-pasta-beef-mince",
+    title: "Pasta with Beef Mince",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-pasta-beef-mince.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-salmon-rice-caviar",
+    title: "Salmon & Rice Bowl with Caviar",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-salmon-rice-caviar.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-rice-tuna-egg-plate",
+    title: "Rice, Tuna & Egg Plate",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-rice-tuna-egg-plate.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-salmon-avocado-crispbreads",
+    title: "Salmon & Avocado Crispbreads with Potatoes",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-salmon-avocado-crispbreads.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-eggs-avocado-sweet-potato",
+    title: "Eggs, Avocado & Roast Sweet Potato",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-eggs-avocado-sweet-potato.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-cottage-cheese-strawberries-pasta",
+    title: "Cottage Cheese, Strawberries & Pasta",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-cottage-cheese-strawberries-pasta.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-spinach-omelette-potatoes",
+    title: "Spinach & Cherry Tomato Omelette with Potatoes",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-spinach-omelette-potatoes.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-lunchbox-salmon-beans",
+    title: "Lunchbox: Salmon, Green Beans & Raspberries",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-lunchbox-salmon-beans.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-fried-egg-cod-liver",
+    title: "Fried Egg with Cod Liver Crispbreads",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-fried-egg-cod-liver.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-spinach-omelette-airfryer-potatoes",
+    title: "Spinach Omelette with Air-Fryer Potatoes",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-spinach-omelette-airfryer-potatoes.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-salmon-broccoli-potatoes",
+    title: "Salmon, Broccoli & Roast Potatoes",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-salmon-broccoli-potatoes.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-steak-broccoli",
+    title: "Steak with Broccoli",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-steak-broccoli.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-white-fish-broccoli-potatoes",
+    title: "White Fish with Broccoli & Potatoes",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-white-fish-broccoli-potatoes.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-veal-potatoes-salad",
+    title: "Veal with Potatoes & Salad",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-veal-potatoes-salad.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-yoghurt-banana-vanilla",
+    title: "Yoghurt with Banana & Vanilla",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-yoghurt-banana-vanilla.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-steak-rice-broccoli",
+    title: "Steak, Rice & Broccoli",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-steak-rice-broccoli.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-buckwheat-egg-breakfast",
+    title: "Buckwheat & Egg Breakfast with Avocado",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-buckwheat-egg-breakfast.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-roasted-zucchini-potatoes",
+    title: "Roasted Zucchini & Potatoes",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-roasted-zucchini-potatoes.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-wholegrain-crepes-apricot",
+    title: "Wholegrain Crepes with Apricot",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-wholegrain-crepes-apricot.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-oat-muffins",
+    title: "Oat Muffins",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-oat-muffins.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-chicken-guacamole-buckwheat",
+    title: "Chicken with Guacamole & Buckwheat",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-chicken-guacamole-buckwheat.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-turkey-iceberg-buckwheat",
+    title: "Turkey with Iceberg & Buckwheat",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-turkey-iceberg-buckwheat.jpg",
+    tags: ["quick"]
+  },
+
+  {
+    id: "ef-crepe-cake-slice",
+    title: "Crepe Cake Slice",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/ef-crepe-cake-slice.jpg",
+    tags: ["quick"]
+  },
+
+  {
     id: "buckwheat-mini-pancakes",
     title: "3-Ingredient Buckwheat Mini Pancakes",
     category: "Breakfast",
