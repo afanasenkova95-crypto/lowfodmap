@@ -46,6 +46,40 @@ const CATEGORIES = [
 const RECIPES = [
 
   {
+    id: "grilled-shrimp-pineapple-salad",
+    title: "Grilled Shrimp & Pineapple Salad",
+    category: "Lunch",
+    time: 15,
+    servings: 1,
+    tags: ["quick", "high-protein", "gluten-free"],
+    image: "images/grilled-shrimp-pineapple-salad.jpg",
+    ingredients: [
+      { item: "120 g large shrimp, peeled and deveined" },
+      { item: "100 g fresh pineapple, sliced into rings" },
+      { item: "40 g brie or camembert, cubed", note: "40 g is the limit — see notes" },
+      { item: "15 g walnut halves" },
+      { item: "30 g fresh arugula" },
+      { item: "5 ml olive oil", note: "for the grill pan" },
+      { item: "5 ml lemon juice or white balsamic vinegar" },
+      { item: "Red pepper flakes · sea salt · black pepper" }
+    ],
+    steps: [
+      "Heat the oil in a grill pan over medium-high. Sear the pineapple rings 2–3 minutes a side until they take on char marks.",
+      "Season the shrimp with salt, pepper and chilli flakes and grill 2 minutes a side, until pink and opaque.",
+      "Lay a bed of arugula in a shallow bowl and arrange the pineapple and shrimp over it.",
+      "Scatter the cheese and walnuts over, dress with the lemon juice or vinegar, and finish with salt and more chilli flakes."
+    ],
+    nutrition: { serveWeight: 320, kcal: 385, protein: 30.2, carbs: 16.5, fat: 22.4 },
+    lfmNotes: [
+      "I trimmed the brie from 50 g to 40 g, which is its serve. Soft white-rind cheeses are lower in lactose than they look, but not unlimited — and 40 g also takes about 33 kcal and 3 g of fat off the plate.",
+      "Pineapple 100 g against a 140 g limit, walnuts 15 g against 30 g, arugula free. Grilling the pineapple concentrates the sugars but does not change the FODMAP maths.",
+      "5 ml of oil is exactly the one-teaspoon budget, and it is doing real work here — a grill pan needs it for the char.",
+      "22.4 g of fat makes this the richest savoury dish in the book, ahead of the green power bowl. It is the cheese and the walnuts, both whole foods, so it is a portion question rather than an ingredient one."
+    ],
+    adaptedFrom: "Brie reduced from 50 g to 40 g to stay inside the serve. Everything else as you sent it."
+  },
+
+  {
     id: "fit-brownie",
     title: "Fit Brownie",
     category: "Desserts",
