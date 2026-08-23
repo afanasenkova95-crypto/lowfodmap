@@ -38,12 +38,882 @@ const CATEGORIES = [
   { name: "Lunch",            icon: "🥗", blurb: "Light, portable, quick" },
   { name: "Dinner",           icon: "🍽️", blurb: "Proper meals" },
   { name: "Snacks",           icon: "🥨", blurb: "Between meals" },
+  { name: "Easy & Fast Lunches", icon: "🍱", blurb: "Plate ideas, no recipe needed" },
   { name: "Desserts",         icon: "🍰", blurb: "Yes, you still can" },
   { name: "Sauces & Basics",  icon: "🥄", blurb: "The building blocks" },
   { name: "Drinks",           icon: "🥤", blurb: "Smoothies and sippers" }
 ];
 
 const RECIPES = [
+
+  {
+    id: "buckwheat-mini-pancakes",
+    title: "3-Ingredient Buckwheat Mini Pancakes",
+    category: "Breakfast",
+    time: 13,
+    servings: 1,
+    tags: ["quick", "high-protein", "low-fat", "vegetarian", "gluten-free"],
+    image: "images/buckwheat-mini-pancakes.jpg",
+    ingredients: [
+      { item: "50 g buckwheat groats, ground to flour", note: "or buckwheat flour" },
+      { item: "1 large whole egg" },
+      { item: "2 large egg whites" },
+      { item: "30 ml lactose-free milk", note: "or water" },
+      { item: "½ tsp gluten-free baking powder" },
+      { item: "Pinch of sea salt" },
+      { item: "Stevia, FitParad 7, or up to 1 tbsp maple syrup", note: "optional" }
+    ],
+    steps: [
+      "Grind the dry buckwheat groats in a high-speed blender or coffee grinder until you have a fine flour.",
+      "Whisk the buckwheat flour, whole egg, egg whites, milk, baking powder, salt and sweetener until smooth. Rest the batter 2 minutes to thicken slightly.",
+      "Heat a dry non-stick pan over medium-low — no oil needed. Spoon in small silver-dollar portions.",
+      "Cook 2 minutes until bubbles form and the edges look set, then flip and give them another 1–2 minutes until golden.",
+      "Stack and eat plain, or serve with lactose-free Greek yoghurt or cottage cheese."
+    ],
+    nutrition: { serveWeight: 170, kcal: 277, protein: 19.1, carbs: 37.4, fat: 5.5 }
+  },
+
+  {
+    id: "quick-bowl-ideas",
+    title: "Six Quick Bowl Ideas",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/quick-bowl-ideas.jpg",
+    tags: ["quick", "high-protein", "gluten-free"]
+  },
+
+  {
+    id: "halloumi-shrimp-quinoa-plate",
+    title: "Halloumi, Shrimp & Quinoa Plate",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/halloumi-shrimp-quinoa-plate.jpg",
+    tags: ["quick", "high-protein", "gluten-free"]
+  },
+
+  {
+    id: "chicken-avocado-ricecake-plate",
+    title: "Chicken & Avocado Rice Cake Plate",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/chicken-avocado-ricecake-plate.jpg",
+    tags: ["quick", "high-protein", "gluten-free"]
+  },
+
+  {
+    id: "light-late-dinner-plate",
+    title: "Light Late Dinner Plate",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/light-late-dinner-plate.jpg",
+    tags: ["quick", "high-protein", "low-fat", "no-cook"]
+  },
+
+  {
+    id: "egg-omelette-buckwheat-plate",
+    title: "Egg White Omelette with Buckwheat",
+    category: "Easy & Fast Lunches",
+    photoOnly: true,
+    image: "images/egg-omelette-buckwheat-plate.jpg",
+    tags: ["quick", "high-protein", "low-fat", "gluten-free"]
+  },
+
+  {
+    id: "chicken-avocado-rice-cakes",
+    title: "Chicken & Avocado Rice Cakes with Eggs",
+    category: "Breakfast",
+    time: 16,
+    servings: 1,
+    tags: ["quick", "high-protein", "low-fat", "gluten-free"],
+    image: "images/chicken-avocado-rice-cakes.jpg",
+    ingredients: [
+      { item: "1 large whole egg + 1 large egg white" },
+      { item: "2 plain puffed rice cakes" },
+      { item: "60 g cooked chicken breast, sliced or shredded" },
+      { item: "30 g avocado, mashed or thinly sliced" },
+      { item: "75 g green beans or zucchini spears", note: "replaces asparagus" },
+      { item: "2 small baby cucumbers, halved lengthways" },
+      { item: "30 g cherry tomatoes, halved", note: "about 3" },
+      { item: "1 tsp olive oil or ghee" },
+      { item: "Sea salt · black pepper" }
+    ],
+    steps: [
+      "Heat ½ tsp of the oil in a non-stick pan over medium. Sauté the green beans or zucchini 4–5 minutes until tender-crisp and lightly browned. Season and set aside.",
+      "Add the remaining ½ tsp of oil to the pan and cook the whole egg and the egg white side by side to your preferred firmness. Season with salt and pepper.",
+      "Spread 15 g of avocado onto each rice cake and top each with 30 g of the chicken.",
+      "Arrange the rice cakes, eggs, sautéed beans, halved cucumbers and cherry tomatoes on a large plate."
+    ],
+    nutrition: { serveWeight: 332, kcal: 358, protein: 35.8, carbs: 26.8, fat: 11.9 }
+  },
+
+  {
+    id: "lemony-shrimp-avocado-salad",
+    title: "Lemony Shrimp, Avocado & Tomato Salad",
+    category: "Lunch",
+    time: 15,
+    servings: 1,
+    tags: ["quick", "high-protein", "gluten-free"],
+    image: "images/lemony-shrimp-avocado-salad.jpg",
+    ingredients: [
+      { item: "150 g large shrimp, peeled and deveined" },
+      { item: "30 g avocado, diced", note: "about ⅛ of a medium avocado" },
+      { item: "30 g mixed red and yellow cherry tomatoes, halved", note: "about 3" },
+      { item: "10 g fresh coriander, roughly chopped" },
+      { item: "15 ml garlic-infused olive oil" },
+      { item: "15 ml fresh lemon or lime juice" },
+      { item: "¼ tsp chilli flakes", note: "optional" },
+      { item: "¼ tsp sea salt · cracked black pepper" }
+    ],
+    steps: [
+      "Heat 1 tsp of the infused oil in a skillet over medium-high. Add the shrimp, season with salt and pepper, and sauté 3–4 minutes until pink and opaque. Take off the heat and cool slightly.",
+      "Combine the shrimp, diced avocado, halved tomatoes and chopped coriander in a bowl.",
+      "Drizzle with the remaining oil, the citrus juice and the chilli flakes, and toss gently so you do not mash the avocado.",
+      "Serve immediately with extra lemon wedges."
+    ],
+    nutrition: { serveWeight: 242, kcal: 310, protein: 35.8, carbs: 6.8, fat: 15.5 }
+  },
+
+  {
+    id: "baked-salmon-potatoes-beans",
+    title: "Baked Salmon with Crispy Baby Potatoes & Green Beans",
+    category: "Dinner",
+    time: 30,
+    servings: 1,
+    tags: ["high-protein", "gluten-free", "one-pan"],
+    image: "images/baked-salmon-potatoes-beans.jpg",
+    ingredients: [
+      { item: "150 g salmon fillet", note: "skin on or off" },
+      { item: "120 g baby potatoes, halved" },
+      { item: "75 g green beans, trimmed", note: "or zucchini spears — replaces asparagus" },
+      { item: "20 g fresh arugula" },
+      { item: "30 g cherry tomatoes, halved", note: "about 3" },
+      { item: "15 ml garlic-infused olive oil", note: "divided" },
+      { item: "1 tsp fresh lemon juice" },
+      { item: "Sea salt · black pepper" }
+    ],
+    steps: [
+      "Heat the oven to 200 °C. Toss the halved potatoes with 2 tsp of the infused oil, salt and pepper. Lay them cut-side down on a parchment-lined baking sheet and roast 10 minutes.",
+      "Pull the sheet out. Season the salmon with salt, pepper and a brush of the infused oil, and lay it on the sheet with the green beans alongside.",
+      "Return to the oven for another 10–12 minutes, until the salmon flakes, the potatoes are crisp and the beans are tender.",
+      "Plate the salmon, potatoes and beans, and serve with a side salad of arugula and halved cherry tomatoes dressed with the last of the oil and the lemon juice."
+    ],
+    nutrition: { serveWeight: 405, kcal: 522, protein: 37.8, carbs: 33.7, fat: 26.1 }
+  },
+
+  {
+    id: "blue-cheese-pear-pizza",
+    title: "Blue Cheese, Pear & Almond Personal Pizza",
+    category: "Lunch",
+    time: 25,
+    servings: 1,
+    tags: ["quick", "high-protein", "vegetarian", "gluten-free"],
+    image: "images/blue-cheese-pear-pizza.jpg",
+    ingredients: [
+      { heading: "Gluten-free quick crust" },
+      { item: "50 g fine white rice flour", note: "or a gluten-free 1-to-1 blend" },
+      { item: "40 g lactose-free yoghurt", note: "or lactose-free sour cream" },
+      { item: "1 small egg" },
+      { item: "2 g gluten-free baking powder" },
+      { item: "Pinch of sea salt" },
+      { item: "1 tsp olive oil", note: "for the parchment" },
+      { heading: "Toppings" },
+      { item: "30 g aged blue cheese, crumbled", note: "gorgonzola or roquefort" },
+      { item: "20 g firm unripe green pear, cored and sliced very thin" },
+      { item: "10 g sliced almonds" },
+      { item: "1 tsp pure maple syrup", note: "optional, drizzled after baking" }
+    ],
+    steps: [
+      "Heat the oven to 200 °C. Line a baking sheet with parchment and brush lightly with olive oil.",
+      "Whisk the egg, yoghurt and a pinch of salt. Stir in the rice flour and baking powder until you have a sticky cohesive dough.",
+      "Turn it onto the parchment and, with wet fingers or a spatula, press it into a 15–18 cm round with a slightly raised edge.",
+      "Pre-bake the bare crust 5 minutes, until it begins to set.",
+      "Scatter the crumbled blue cheese over the base, arrange the very thin pear slices on top and scatter the almonds over.",
+      "Bake another 7–8 minutes, until the cheese is bubbling and the crust edges are golden.",
+      "Drizzle lightly with maple syrup if using, slice and serve warm."
+    ],
+    nutrition: { serveWeight: 189, kcal: 385, protein: 16.8, carbs: 38.1, fat: 18.3 }
+  },
+
+  {
+    id: "strawberry-pecan-salad",
+    title: "Strawberry, Pecan & Whipped Cheese Salad",
+    category: "Lunch",
+    time: 5,
+    servings: 1,
+    tags: ["quick", "vegetarian", "gluten-free", "no-cook"],
+    image: "images/strawberry-pecan-salad.jpg",
+    ingredients: [
+      { item: "75 g mixed salad greens", note: "butterhead, iceberg or baby spinach" },
+      { item: "60 g strawberries, hulled and quartered", note: "about 4–5 berries" },
+      { item: "60 g lactose-free cottage cheese, whipped smooth", note: "or lactose-free feta" },
+      { item: "15 g pecan halves, toasted" },
+      { item: "15 ml extra virgin olive oil" },
+      { item: "5 ml pure maple syrup" },
+      { item: "5 ml lemon juice", note: "or red wine vinegar" },
+      { item: "½ tsp Dijon mustard" },
+      { item: "Sea salt · black pepper" }
+    ],
+    steps: [
+      "Whisk the olive oil, maple syrup, lemon juice, mustard, salt and pepper in a small glass until emulsified.",
+      "Put the washed greens in a wide bowl and scatter the quartered strawberries and toasted pecans over them.",
+      "Dollop the whipped cottage cheese, or crumbled feta, around the salad.",
+      "Drizzle the dressing over just before serving."
+    ],
+    nutrition: { serveWeight: 235, kcal: 315, protein: 9.0, carbs: 14.6, fat: 24.5 }
+  },
+
+  {
+    id: "microwave-mug-bread",
+    title: "5-Minute Microwave Mug Bread",
+    category: "Sauces & Basics",
+    time: 6,
+    servings: 2,
+    tags: ["quick", "high-protein", "vegetarian", "gluten-free"],
+    image: "images/microwave-mug-bread.jpg",
+    ingredients: [
+      { item: "1 large egg" },
+      { item: "30 g ground gluten-free rolled oats", note: "ground oats, not bran" },
+      { item: "30 ml lactose-free kefir", note: "or lactose-free yoghurt" },
+      { item: "2 g gluten-free baking powder" },
+      { item: "Pinch of sea salt" },
+      { item: "10 g pumpkin or chia seeds", note: "optional" }
+    ],
+    steps: [
+      "Whisk the egg, kefir, ground oats, baking powder, salt and seeds together in a small microwave-safe mug or ramekin until smooth.",
+      "Microwave on high for 3–4 minutes, until cooked through and firm to the touch.",
+      "Invert the mug to release the loaf onto a plate, cool 2 minutes, then slice in half to toast or build a sandwich."
+    ],
+    nutrition: { serveWeight: 60, kcal: 114, protein: 6.5, carbs: 10.1, fat: 5.3 }
+  },
+
+  {
+    id: "high-protein-breakfast-plate",
+    title: "High-Protein Breakfast Plate & Berry Protein Oatmeal",
+    category: "Breakfast",
+    time: 20,
+    servings: 1,
+    tags: ["quick", "high-protein", "gluten-free"],
+    image: "images/high-protein-breakfast-plate.jpg",
+    ingredients: [
+      { heading: "Berry protein oatmeal" },
+      { item: "40 g gluten-free rolled oats" },
+      { item: "150 ml water", note: "or lactose-free milk" },
+      { item: "25 g unflavoured whey protein isolate", note: "1 scoop" },
+      { item: "20 g pitted sour cherries", note: "about 3 — or 50 g fresh strawberries" },
+      { item: "1 tsp stevia or FitParad 7", note: "optional" },
+      { heading: "Egg & veggie plate" },
+      { item: "4 large egg whites + 1 egg yolk" },
+      { item: "2 plain buckwheat or rice crispbreads" },
+      { item: "30 g avocado, sliced" },
+      { item: "50 g cucumber, cut into sticks" },
+      { item: "30 g cherry tomatoes", note: "about 3" },
+      { item: "½ tsp ghee or olive oil", note: "for the eggs" },
+      { item: "Sea salt · black pepper" }
+    ],
+    steps: [
+      "Combine the oats and water in a small pan or microwave and cook 3–5 minutes until soft. Off the heat, cool for a minute, then whisk in the protein isolate and sweetener until smooth. Top with the cherries or strawberries.",
+      "Heat the ghee in a non-stick pan over medium-low. Add the 4 egg whites and the yolk and cook to your preferred firmness. Season with salt and pepper.",
+      "Arrange the eggs, crispbreads, avocado, cucumber sticks and cherry tomatoes on a large plate.",
+      "Serve the warm oatmeal alongside the savoury plate."
+    ],
+    nutrition: { serveWeight: 480, kcal: 502, protein: 49.5, carbs: 44.3, fat: 14.0 }
+  },
+
+  {
+    id: "turkey-zucchini-cutlets",
+    title: "Turkey & Zucchini Spring Cutlets",
+    category: "Dinner",
+    time: 30,
+    servings: 4,
+    tags: ["quick", "high-protein", "low-fat", "gluten-free", "meal-prep", "freezer"],
+    image: "images/turkey-zucchini-cutlets.jpg",
+    ingredients: [
+      { item: "300 g ground turkey breast", note: "or ground chicken" },
+      { item: "120 g zucchini, coarsely grated" },
+      { item: "1 large egg" },
+      { item: "20 g gluten-free oat flour", note: "or fine white rice flour" },
+      { item: "15 g spring onion — green tops only, finely chopped" },
+      { item: "10 g fresh dill, finely chopped" },
+      { item: "1 tbsp garlic-infused olive oil", note: "for seasoning and cooking" },
+      { item: "½ tsp sea salt · ¼ tsp black pepper" }
+    ],
+    steps: [
+      "Grate the zucchini, sprinkle with a pinch of salt and leave 5 minutes. Squeeze out all the excess liquid in a clean kitchen towel.",
+      "Combine the turkey, squeezed zucchini, egg, oat flour, scallion tops, dill, 1 tsp of the infused oil, salt and pepper. Mix until smooth and cohesive.",
+      "Divide into 4 thick round cutlets.",
+      "Heat the remaining infused oil in a non-stick pan over medium-low. Cook under a lid 6–7 minutes a side, until lightly browned and cooked through (74 °C internal)."
+    ],
+    nutrition: { serveWeight: 114, kcal: 134, protein: 18.9, carbs: 3.3, fat: 5.0 }
+  },
+
+  {
+    id: "maasdam-tomato-rice-cakes",
+    title: "Maasdam & Tomato Rice Cake Open-Sandwiches",
+    category: "Snacks",
+    time: 5,
+    servings: 1,
+    tags: ["quick", "vegetarian", "gluten-free", "no-cook"],
+    image: "images/maasdam-tomato-rice-cakes.jpg",
+    ingredients: [
+      { item: "2 plain rice cakes", note: "gluten-free puffed rice" },
+      { item: "50 g Maasdam cheese, thinly sliced", note: "about 2 slices" },
+      { item: "80 g ripe tomato, sliced", note: "about 40 g per sandwich" },
+      { item: "¼ tsp sea salt · pinch of cracked black pepper" },
+      { item: "60 g fresh blueberries", note: "to serve alongside" }
+    ],
+    steps: [
+      "Lay the two rice cakes on a plate.",
+      "Slice the tomato and arrange it evenly across both, about 40 g each.",
+      "Season the tomato directly with sea salt and a pinch of pepper.",
+      "Cover with the thin slices of Maasdam.",
+      "Serve immediately, with the blueberries alongside."
+    ],
+    nutrition: { serveWeight: 249, kcal: 321, protein: 16.3, carbs: 31.9, fat: 14.7 }
+  },
+
+  {
+    id: "lazy-cabbage-rolls",
+    title: "Lazy Cabbage Rolls",
+    category: "Dinner",
+    time: 40,
+    servings: 4,
+    tags: ["high-protein", "low-fat", "gluten-free", "meal-prep", "freezer"],
+    image: "images/lazy-cabbage-rolls.jpg",
+    ingredients: [
+      { item: "300 g ground chicken breast" },
+      { item: "120 g Napa cabbage, finely shredded and blanched" },
+      { item: "80 g cooked white rice, cooled" },
+      { item: "40 g carrot, finely grated" },
+      { item: "20 g spring onion — green tops only, finely chopped" },
+      { item: "10 ml garlic-infused olive oil" },
+      { item: "1 large egg", note: "to bind" },
+      { item: "½ tsp sea salt · ¼ tsp cracked black pepper" }
+    ],
+    steps: [
+      "Finely shred the Napa cabbage, pour boiling water over it and leave 3 minutes to soften. Drain completely and squeeze out all the excess water.",
+      "Combine the ground chicken, blanched cabbage, cooked rice, grated carrot, scallion tops, egg, infused oil, salt and pepper in a large bowl.",
+      "Mix thoroughly by hand until uniform and cohesive. Divide into 4 and shape into oval patties.",
+      "Steam: sit them in a steamer basket over boiling water, cover, and steam 20–22 minutes until cooked through.",
+      "Or pan-sauté: cook under a lid in a non-stick pan over low-medium heat with a spray of oil, 6–7 minutes a side, until golden and cooked through (74 °C internal).",
+      "Serve hot, with a spoonful of lactose-free sour cream or Greek yoghurt if you like."
+    ],
+    nutrition: { serveWeight: 146, kcal: 158, protein: 20.8, carbs: 8.6, fat: 4.5 }
+  },
+
+  {
+    id: "chicken-cutlets-mash",
+    title: "Chicken Cutlets with Mash & Creamy Cucumber Salad",
+    category: "Dinner",
+    time: 45,
+    servings: 2,
+    tags: ["high-protein", "gluten-free", "meal-prep"],
+    image: "images/chicken-cutlets-mash.jpg",
+    ingredients: [
+      { heading: "Herb chicken cutlets" },
+      { item: "250 g lean ground chicken breast or turkey mince" },
+      { item: "1 large egg" },
+      { item: "15 g fine white rice flour" },
+      { item: "15 g spring onion — green tops only, finely chopped" },
+      { item: "10 g fresh dill, finely chopped" },
+      { item: "1 tbsp garlic-infused olive oil", note: "for seasoning and frying" },
+      { item: "½ tsp sea salt · black pepper" },
+      { heading: "Creamy mashed potatoes" },
+      { item: "300 g Yukon Gold or yellow potatoes, peeled and quartered" },
+      { item: "40 ml warm lactose-free milk" },
+      { item: "15 g ghee or lactose-free butter" },
+      { item: "Sea salt to taste" },
+      { heading: "Cucumber & tomato salad" },
+      { item: "120 g common tomatoes, chopped" },
+      { item: "120 g English cucumber, peeled and sliced" },
+      { item: "50 g lactose-free sour cream", note: "or lactose-free Greek yoghurt" },
+      { item: "5 g fresh dill, chopped" },
+      { item: "½ tsp lemon juice · sea salt · black pepper" }
+    ],
+    steps: [
+      "Put the peeled, quartered potatoes in salted water, bring to the boil and cook 15–18 minutes until fork-tender.",
+      "Mix the ground chicken, egg, rice flour, scallion tops, dill, 1 tsp of the infused oil, salt and pepper. Shape into 4 patties.",
+      "Heat the remaining infused oil in a non-stick pan over medium heat. Fry the cutlets 5–6 minutes a side under a lid, until golden and cooked through (74 °C internal).",
+      "Drain the potatoes thoroughly. Add the ghee and warm milk and mash until completely smooth and fluffy. Season with salt.",
+      "Toss the tomatoes, cucumber, dill, sour cream, lemon juice, salt and pepper together.",
+      "Divide the mash, cutlets and salad across 2 plates and serve warm."
+    ],
+    nutrition: { serveWeight: 419, kcal: 453, protein: 36.8, carbs: 37.7, fat: 17.3 }
+  },
+
+  {
+    id: "oat-pancake-brie-kiwi",
+    title: "Oatmeal Pancake with Brie, Kiwi & Maple",
+    category: "Breakfast",
+    time: 15,
+    servings: 1,
+    tags: ["quick", "high-protein", "vegetarian", "gluten-free"],
+    image: "images/oat-pancake-brie-kiwi.jpg",
+    ingredients: [
+      { heading: "Oatmeal pancake base" },
+      { item: "40 g gluten-free rolled oats" },
+      { item: "1 large egg" },
+      { item: "30 ml lactose-free milk", note: "or unsweetened almond milk" },
+      { item: "Pinch of sea salt" },
+      { item: "1 tsp ghee or coconut oil", note: "for the pan" },
+      { heading: "Toppings" },
+      { item: "30 g lactose-free cream cheese", note: "or thick lactose-free Greek yoghurt" },
+      { item: "35 g brie or camembert, thinly sliced" },
+      { item: "100 g green kiwi, peeled and sliced", note: "about 1 kiwi" },
+      { item: "10 g pure maple syrup", note: "or rice malt syrup" }
+    ],
+    steps: [
+      "Mix the oats, egg, milk and salt until smooth — leave the oats whole for texture, or blend briefly for a smoother pancake.",
+      "Heat the ghee in a non-stick pan over medium-low. Pour in the batter and spread into a round. Cover and cook 3–4 minutes until the surface sets.",
+      "Flip carefully and cook the second side 2–3 minutes until golden. Transfer to a plate.",
+      "Spread the cream cheese across the warm pancake.",
+      "Arrange the kiwi along one side and the brie across the other, and drizzle the maple over both just before serving."
+    ],
+    nutrition: { serveWeight: 245, kcal: 417, protein: 19.4, carbs: 43.0, fat: 18.6 }
+  },
+
+  {
+    id: "bounty-coconut-cake",
+    title: "Bounty Coconut-Chocolate Cake",
+    category: "Desserts",
+    time: 60,
+    servings: 6,
+    tags: ["high-protein", "vegetarian", "gluten-free"],
+    image: "images/bounty-coconut-cake.jpg",
+    ingredients: [
+      { heading: "Chocolate sponge" },
+      { item: "50 g fine white rice flour" },
+      { item: "30 g unsweetened cocoa powder" },
+      { item: "70 ml lactose-free milk" },
+      { item: "4 large eggs, separated" },
+      { item: "30 ml water, room temperature" },
+      { item: "1 tsp vanilla extract · pinch of sea salt" },
+      { item: "5 g gluten-free baking powder" },
+      { item: "Pure stevia to taste (~½ tsp)", note: "replaces 100 g syrup" },
+      { item: "7 g FitParad 7" },
+      { heading: "Coconut custard cream" },
+      { item: "400 g lactose-free cream cheese", note: "or lactose-free curd cheese" },
+      { item: "250 ml lactose-free milk" },
+      { item: "30 g cornflour" },
+      { item: "30 g lactose-free milk powder", note: "or unflavoured lactose-free whey isolate" },
+      { item: "50 g fine unsweetened shredded coconut" },
+      { item: "Pure stevia to taste (~¼ tsp)", note: "replaces 50 g syrup" },
+      { item: "15 g FitParad 7" }
+    ],
+    steps: [
+      "Whisk the 250 ml milk, cornflour, milk powder, 15 g FitParad and stevia in a small saucepan. Cook over medium heat, stirring constantly, until thickened into a smooth custard. Off the heat, stir in the shredded coconut and cool completely.",
+      "Whip the cream cheese until smooth, then fold it into the cooled coconut custard until thick and uniform. Refrigerate while you make the sponges.",
+      "Whip the egg whites with a pinch of salt to firm stiff peaks.",
+      "In another bowl whisk the yolks, 70 ml milk, water, 7 g FitParad, stevia and vanilla. Sift in the rice flour, cocoa and baking powder and whisk smooth.",
+      "Fold the whites into the chocolate mixture in 2–3 batches.",
+      "Heat a non-stick skillet over low heat, greasing lightly if needed. Cook 3–4 thin flat sponge layers under a closed lid, 3–4 minutes a side, flipping carefully. Cool completely.",
+      "Layer sponge and coconut cream alternately, then coat the sides and top with the remaining cream.",
+      "Chill at least 2 hours so the cream firms and soaks into the sponges before slicing."
+    ],
+    nutrition: { serveWeight: 155, kcal: 239, protein: 12.1, carbs: 15.1, fat: 14.6 }
+  },
+
+  {
+    id: "kartoshka-protein-truffles",
+    title: "Chocolate Kartoshka Protein Truffles",
+    category: "Desserts",
+    time: 45,
+    servings: 4,
+    tags: ["vegetarian", "gluten-free", "no-cook", "meal-prep"],
+    image: "images/kartoshka-protein-truffles.jpg",
+    ingredients: [
+      { item: "100 g gluten-free rolled oats" },
+      { item: "100 g lactose-free cottage cheese 5%" },
+      { item: "80 g firm yellow banana, peeled and mashed" },
+      { item: "35 g dark chocolate chips 70%+, finely chopped" },
+      { item: "15 ml strong espresso or liquid instant coffee, cooled" },
+      { item: "10 g unsweetened cocoa powder", note: "for rolling" },
+      { item: "2 g ground cinnamon" },
+      { item: "Stevia or erythritol to taste" }
+    ],
+    steps: [
+      "Toast the oats with the cinnamon in a dry pan over medium heat for about 5 minutes, until fragrant and lightly golden. Cool completely, then grind to a coarse meal in a blender or coffee grinder.",
+      "Combine the ground oats, cottage cheese, mashed banana, coffee, chopped chocolate and sweetener in a food processor or bowl.",
+      "Pulse or mix thoroughly until you have a cohesive, thick, mouldable dough. Taste and adjust the sweetness.",
+      "Divide into 4. Dust a plate with the cocoa and roll each portion into the traditional cylinder shape, coating all sides generously.",
+      "Chill on parchment for at least 30 minutes to firm up before serving."
+    ],
+    nutrition: { serveWeight: 85, kcal: 193, protein: 7.7, carbs: 25.5, fat: 6.7 }
+  },
+
+  {
+    id: "green-salad-mozzarella",
+    title: "Green Salad with Mozzarella & Sesame Dressing",
+    category: "Lunch",
+    time: 10,
+    servings: 2,
+    tags: ["quick", "vegetarian", "gluten-free", "no-cook"],
+    image: "images/green-salad-mozzarella.jpg",
+    ingredients: [
+      { item: "75 g arugula and radicchio mix" },
+      { item: "75 g canned sweet corn", note: "drained and rinsed well" },
+      { item: "75 g cherry tomatoes, halved", note: "about 5–6" },
+      { item: "100 g English or Persian cucumber, sliced" },
+      { item: "100 g lactose-free mozzarella", note: "mini balls or diced" },
+      { item: "20 g toasted sesame oil" },
+      { item: "Sea salt · cracked black pepper" }
+    ],
+    steps: [
+      "Wash and dry the leaves. Slice the cucumber into half-moons and halve the cherry tomatoes.",
+      "Drain the corn and rinse thoroughly under cold water — rinsing leaches out soluble polyols. Weigh out exactly 75 g.",
+      "Combine the leaves, cucumber, tomatoes and corn in a large bowl.",
+      "Fold in the diced mozzarella.",
+      "Drizzle with the sesame oil, season generously, and toss gently right before serving."
+    ],
+    nutrition: { serveWeight: 220, kcal: 264, protein: 10.8, carbs: 9.5, fat: 20.3 }
+  },
+
+  {
+    id: "savory-cottage-waffles-salmon",
+    title: "Savoury Cottage Cheese Waffles with Smoked Salmon",
+    category: "Lunch",
+    time: 20,
+    servings: 2,
+    tags: ["quick", "high-protein", "gluten-free"],
+    image: "images/savory-cottage-waffles-salmon.jpg",
+    ingredients: [
+      { heading: "Waffle batter" },
+      { item: "120 g lactose-free cottage cheese" },
+      { item: "1 large egg" },
+      { item: "30 g fine white rice flour" },
+      { item: "2 g gluten-free baking powder" },
+      { item: "Pinch of sea salt" },
+      { item: "1 tsp neutral oil or ghee", note: "for the waffle iron" },
+      { heading: "Toppings" },
+      { item: "40 g lactose-free cream cheese", note: "or thick lactose-free Greek yoghurt" },
+      { item: "60 g smoked or hot-smoked salmon, flaked" },
+      { item: "20 g blue cheese, crumbled", note: "gorgonzola or stilton" },
+      { item: "½ tsp dried dill or mixed green herbs" }
+    ],
+    steps: [
+      "Heat the waffle iron to medium-high and grease lightly with the oil or ghee.",
+      "Blend or whisk the cottage cheese, egg, rice flour, baking powder and salt vigorously into a thick smooth batter.",
+      "Divide between two portions on the hot iron, close the lid, and cook 4–6 minutes until crisp, golden and releasing easily.",
+      "Spread 20 g of cream cheese over each hot waffle.",
+      "Layer the flaked salmon across both, crumble the blue cheese over, and scatter the dill before serving immediately."
+    ],
+    nutrition: { serveWeight: 137, kcal: 255, protein: 19.1, carbs: 11.0, fat: 15.0 }
+  },
+
+  {
+    id: "cottage-cheese-pizza",
+    title: "Cottage Cheese Protein Pizza",
+    category: "Lunch",
+    time: 30,
+    servings: 2,
+    tags: ["high-protein", "low-fat", "gluten-free"],
+    image: "images/cottage-cheese-pizza.jpg",
+    ingredients: [
+      { heading: "Dough" },
+      { item: "150 g lactose-free cottage cheese" },
+      { item: "35 g fine white rice flour", note: "or a gluten-free baking blend" },
+      { item: "1 large egg" },
+      { item: "¼ tsp sea salt" },
+      { item: "½ tsp Italian herb blend", note: "oregano, basil, thyme — no garlic or onion" },
+      { heading: "Toppings" },
+      { item: "30 g tomato paste + 1 tsp garlic-infused olive oil", note: "plain paste, no added garlic or onion" },
+      { item: "40 g lactose-free shredded mozzarella or hard aged cheese" },
+      { item: "30 g diced lean ham or cooked chicken breast", note: "garlic- and onion-free" },
+      { item: "35 g canned sweet corn, rinsed well" },
+      { item: "45 g yellow cherry tomatoes, halved" },
+      { item: "A handful of microgreens or arugula", note: "to garnish" }
+    ],
+    steps: [
+      "Heat the oven to 200 °C and line a baking sheet with parchment.",
+      "Blend the cottage cheese, egg, rice flour, salt and herbs into a thick smooth dough.",
+      "Spread it onto the lined sheet with a spatula into a thin round about ½ cm thick.",
+      "Par-bake the base alone for 12–15 minutes, until firm and lightly golden at the edges.",
+      "Mix the tomato paste with the infused oil and spread over the crust, then layer on the mozzarella, ham, corn and cherry tomatoes.",
+      "Return to the oven for 6–8 minutes, until the cheese is melted and bubbling.",
+      "Scatter the microgreens over before slicing."
+    ],
+    nutrition: { serveWeight: 193, kcal: 258, protein: 21.5, carbs: 20.5, fat: 10.0 }
+  },
+
+  {
+    id: "protein-pancakes",
+    title: "Fluffy Protein Pancakes",
+    category: "Breakfast",
+    time: 15,
+    servings: 1,
+    tags: ["quick", "high-protein", "vegetarian", "gluten-free"],
+    image: "images/protein-pancakes.jpg",
+    ingredients: [
+      { item: "45 g fine white rice flour" },
+      { item: "1 large whole egg" },
+      { item: "1 large egg white" },
+      { item: "25 ml lactose-free milk", note: "or unsweetened almond milk" },
+      { item: "10 ml coconut oil", note: "or melted butter" },
+      { item: "2 g gluten-free baking powder" },
+      { item: "Pinch of sea salt" },
+      { item: "Stevia or erythritol to taste" },
+      { item: "30 g fresh blueberries", note: "optional topping" }
+    ],
+    steps: [
+      "In a clean dry bowl, whip the single egg white with a pinch of salt to stiff peaks.",
+      "In another bowl, whisk the whole egg, milk, rice flour, baking powder and sweetener until smooth.",
+      "Fold the whipped white into the batter with a spatula until just combined, then let it rest 5 minutes to thicken.",
+      "Heat the coconut oil in a non-stick pan over medium-low. Spoon in small circles of batter.",
+      "Cook 2–3 minutes until bubbles form on the surface and the bottoms are golden, then flip and give them another 1–2 minutes.",
+      "Serve warm, with blueberries if using."
+    ],
+    nutrition: { serveWeight: 150, kcal: 341, protein: 13.0, carbs: 37.3, fat: 15.3 }
+  },
+
+  {
+    id: "strawberry-layer-cake",
+    title: "Strawberry Layer Mini-Cake",
+    category: "Desserts",
+    time: 60,
+    servings: 4,
+    tags: ["high-protein", "vegetarian", "gluten-free"],
+    image: "images/strawberry-layer-cake.jpg",
+    ingredients: [
+      { heading: "Sponge base" },
+      { item: "3 large eggs, separated" },
+      { item: "50 g lactose-free kefir", note: "or lactose-free milk + ½ tsp lemon juice" },
+      { item: "80 g fine white rice flour" },
+      { item: "15 g cornflour" },
+      { item: "3 g baking powder · pinch of bicarbonate of soda · pinch of sea salt" },
+      { item: "Stevia or erythritol to taste" },
+      { item: "¼ tsp vanilla extract or pure vanillin" },
+      { heading: "Cream frosting" },
+      { item: "150 g lactose-free cream cheese", note: "or whipped lactose-free quark or ricotta" },
+      { item: "Stevia or erythritol to taste" },
+      { item: "½ tsp vanilla extract" },
+      { heading: "Strawberry confit" },
+      { item: "100 g strawberries, chopped", note: "fresh or frozen" },
+      { item: "15 g cornflour" },
+      { item: "Stevia or erythritol to taste" },
+      { heading: "Soak" },
+      { item: "30 ml lactose-free milk" },
+      { item: "Stevia or erythritol to taste" }
+    ],
+    steps: [
+      "Heat the oven to 180 °C and line a large baking sheet with silicone parchment.",
+      "Warm the kefir slightly, stir in the bicarbonate and set aside to activate.",
+      "Whip the egg whites with the salt and sweetener to stiff peaks.",
+      "In another bowl whisk the yolks, kefir mixture, rice flour, cornflour, baking powder and vanilla until smooth.",
+      "Fold the whites into the yolk mixture in 2–3 batches until uniform.",
+      "Spread evenly onto the lined tray as a thin rectangle and bake 12–15 minutes until light golden. Cool completely, then cut out 4 round mini discs.",
+      "For the confit, heat the strawberries, cornflour and sweetener over medium-low, stirring continuously, until it thickens to a jam. Cool completely.",
+      "Whip the cream cheese, sweetener and vanilla until smooth and fluffy, then transfer to a piping bag.",
+      "Brush each disc with the sweetened milk soak. Pipe dots of cream around the outer ring and centre of the bottom disc and fill the gaps with confit.",
+      "Repeat the stacking — sponge, soak, cream and confit — and chill at least 1 hour before serving."
+    ],
+    nutrition: { serveWeight: 125, kcal: 202, protein: 8.5, carbs: 23.0, fat: 8.5 }
+  },
+
+  {
+    id: "green-onion-egg-pie",
+    title: "Green Onion & Egg Jellied Pie",
+    category: "Lunch",
+    time: 55,
+    servings: 4,
+    tags: ["high-protein", "vegetarian", "gluten-free", "meal-prep"],
+    image: "images/green-onion-egg-pie.jpg",
+    ingredients: [
+      { heading: "Dough" },
+      { item: "100 g lactose-free sour cream 10–12%" },
+      { item: "2 large eggs (~100 g)" },
+      { item: "70 g fine white rice flour" },
+      { item: "½ tsp baking powder" },
+      { item: "Sea salt to taste" },
+      { heading: "Filling" },
+      { item: "2 large eggs, hard-boiled and chopped (~100 g)" },
+      { item: "30 g spring onion — green tops only, finely chopped", note: "weighed after separating from the white" },
+      { item: "Sea salt to taste" },
+      { heading: "Topping" },
+      { item: "1 tsp neutral oil", note: "for greasing — avocado oil works" },
+      { item: "5 g white sesame seeds" }
+    ],
+    steps: [
+      "Hard-boil 2 eggs, cool, peel and dice. Combine with the chopped green scallion tops and season with salt.",
+      "Heat the oven to 180 °C and grease a small baking dish — a 15 cm round tin or small loaf pan — with the oil.",
+      "Whisk the 2 fresh eggs, sour cream, rice flour, baking powder and salt into a smooth thin batter, about the consistency of pancake batter.",
+      "Pour half the batter into the dish, scatter the egg and scallion filling evenly over it, then pour the rest of the batter over to cover completely.",
+      "Scatter the sesame seeds across the surface and bake 35–40 minutes, until puffed and deeply golden and a toothpick comes out clean.",
+      "Cool in the dish at least 15 minutes before turning out. Serve warm or at room temperature."
+    ],
+    nutrition: { serveWeight: 103, kcal: 170, protein: 11.2, carbs: 10.4, fat: 9.3 }
+  },
+
+  {
+    id: "banana-cinnamon-muffins",
+    title: "Banana Cinnamon Muffins",
+    category: "Breakfast",
+    time: 35,
+    servings: 8,
+    tags: ["quick", "low-fat", "vegetarian", "vegan", "gluten-free", "meal-prep", "kid-friendly"],
+    image: "images/banana-cinnamon-muffins.jpg",
+    ingredients: [
+      { item: "177 g firm yellow bananas", note: "peeled weight" },
+      { item: "90 g low FODMAP flour blend", note: "e.g. 50 g fine rice flour + 40 g oat flour" },
+      { item: "3 g ground cinnamon" },
+      { item: "3 g psyllium husk powder" },
+      { item: "3 g baking powder" },
+      { item: "Pinch of sea salt" },
+      { item: "Stevia or erythritol to taste" }
+    ],
+    steps: [
+      "Purée the firm bananas with a fork or blender until smooth.",
+      "Add the flour blend, cinnamon, psyllium, baking powder, salt and sweetener, and mix thoroughly into a uniform thick batter.",
+      "Divide between 8 mini silicone muffin moulds and bake at 180 °C for 20–25 minutes, until firm and golden."
+    ],
+    nutrition: { serveWeight: 40, kcal: 58, protein: 1.7, carbs: 12.6, fat: 0.3 }
+  },
+
+  {
+    id: "chocolate-berry-cake",
+    title: "Chocolate Berry Cake",
+    category: "Desserts",
+    time: 45,
+    servings: 4,
+    tags: ["low-fat", "vegetarian", "gluten-free"],
+    image: "images/chocolate-berry-cake.jpg",
+    ingredients: [
+      { item: "3 large eggs (~165 g)" },
+      { item: "70 g fine rice flour" },
+      { item: "20 g defatted cocoa powder" },
+      { item: "1 tsp baking powder" },
+      { item: "Pinch of sea salt" },
+      { item: "60 g red currants, strawberries or blueberries", note: "15–20 g per slice if using black currants" },
+      { item: "Stevia, erythritol or FitParad to taste" }
+    ],
+    steps: [
+      "Separate the egg whites from the yolks.",
+      "Whisk the yolks with the sweetener, rice flour, cocoa and baking powder until smooth, adding a tiny splash of water if it needs it.",
+      "In a clean bowl, whip the whites with a pinch of salt to stiff peaks.",
+      "Fold the whites into the cocoa mixture with a spatula until combined — the batter will be light and fluffy.",
+      "Pour into a silicone loaf pan, scatter the berries evenly over the top, and bake at 180 °C for 30 minutes. Cool completely before slicing."
+    ],
+    nutrition: { serveWeight: 75, kcal: 97, protein: 5.3, carbs: 12.0, fat: 2.9 }
+  },
+
+  {
+    id: "potato-cheese-waffles",
+    title: "Flourless Potato Cheese Waffles",
+    category: "Lunch",
+    time: 20,
+    servings: 2,
+    tags: ["quick", "high-protein", "vegetarian", "gluten-free"],
+    image: "images/potato-cheese-waffles.jpg",
+    ingredients: [
+      { item: "150 g raw potatoes, peeled" },
+      { item: "2 large eggs (~100 g)" },
+      { item: "30 g sulguni or mozzarella, grated" },
+      { item: "30 g cheddar or gouda, grated", note: "replaces Adyghe cheese" },
+      { item: "10 g fresh coriander or green spring onion tops", note: "green tops only" },
+      { item: "½ tsp sea salt · black pepper to taste" }
+    ],
+    steps: [
+      "Peel and coarsely chop the potatoes, then blend with the eggs until you have a smooth liquid batter.",
+      "Transfer to a bowl and fold in the grated cheeses, chopped herbs, salt and pepper.",
+      "Heat the waffle maker and grease lightly if needed. Pour in half the batter per serving and cook 7–8 minutes, until the lid lifts easily and the waffles are crisp and golden."
+    ],
+    nutrition: { serveWeight: 140, kcal: 203, protein: 12.3, carbs: 13.5, fat: 11.1 }
+  },
+
+  {
+    id: "cinnamon-rolls",
+    title: "Microwave Cottage Cheese Cinnamon Rolls",
+    category: "Breakfast",
+    time: 15,
+    servings: 1,
+    tags: ["quick", "high-protein", "vegetarian", "gluten-free"],
+    image: "images/cinnamon-rolls.jpg",
+    ingredients: [
+      { heading: "Dough" },
+      { item: "100 g lactose-free dry curd cheese 5%" },
+      { item: "1 egg yolk (~18 g)" },
+      { item: "50 g fine rice flour" },
+      { item: "½ tsp baking powder" },
+      { item: "Pinch of sea salt" },
+      { item: "Stevia or erythritol to taste" },
+      { heading: "Filling" },
+      { item: "2 g ground cinnamon" },
+      { item: "10–15 g melted coconut oil or coconut butter" },
+      { item: "Sweetener to taste" },
+      { heading: "Topping" },
+      { item: "20 g lactose-free soft curd cheese 0–5%" },
+      { item: "10 g dark chocolate 85%+, melted" },
+      { item: "Sweetener to taste" }
+    ],
+    steps: [
+      "Mix the curd cheese, egg yolk, rice flour, baking powder, salt and sweetener into a pliable dough.",
+      "Roll out into a rectangle on parchment. Mix the melted coconut oil, cinnamon and sweetener, and spread it evenly over the dough.",
+      "Cut into strips, or roll into a log and slice into 2–3 mini rolls. Sit them side by side in a microwave-safe dish.",
+      "Microwave on high for 3.5–4 minutes.",
+      "Mix the topping curd with sweetener, spread over the warm rolls, and drizzle with the melted dark chocolate."
+    ],
+    nutrition: { serveWeight: 210, kcal: 468, protein: 24.5, carbs: 44.8, fat: 21.2 }
+  },
+
+  {
+    id: "chocolate-crepe-cake",
+    title: "Chocolate Crepe Cake",
+    category: "Desserts",
+    time: 45,
+    servings: 4,
+    tags: ["high-protein", "vegetarian", "gluten-free"],
+    image: "images/chocolate-crepe-cake.jpg",
+    ingredients: [
+      { heading: "Chocolate crepes" },
+      { item: "2 large eggs (~110 g)" },
+      { item: "100 ml almond or lactose-free milk" },
+      { item: "20 g cocoa powder" },
+      { item: "30 g fine rice flour" },
+      { item: "½ tsp baking powder" },
+      { item: "60 ml water" },
+      { item: "Pinch of vanillin · FitParad, stevia or erythritol to taste" },
+      { item: "1 tsp coconut oil", note: "for the pan" },
+      { heading: "Lactose-free cream" },
+      { item: "200 g lactose-free soft curd cheese" },
+      { item: "150 g lactose-free cream cheese" },
+      { item: "FitParad or stevia to taste" },
+      { heading: "Chocolate glaze" },
+      { item: "40 g dark chocolate 85%+", note: "or stevia-sweetened" },
+      { item: "15 g pine nuts" },
+      { item: "1 tsp coconut oil", note: "melted with the chocolate for shine" }
+    ],
+    steps: [
+      "Whisk the eggs, milk, water, rice flour, cocoa, baking powder, vanillin and sweetener until smooth.",
+      "Lightly grease a non-stick pan with coconut oil over medium heat. Ladle in small amounts and cook 5–6 thin crepes, 1–2 minutes a side. Cool completely.",
+      "Whisk the soft curd, cream cheese and sweetener until smooth and fluffy.",
+      "Layer the crepes, spreading an even layer of cream between each.",
+      "Melt the chocolate with the coconut oil over a water bath or in short microwave bursts, stir in the pine nuts, and pour over the top.",
+      "Refrigerate at least 1–2 hours before slicing."
+    ],
+    nutrition: { serveWeight: 150, kcal: 267, protein: 13.2, carbs: 14.7, fat: 17.3 }
+  },
+
+  {
+    id: "salmon-basmati-bowl",
+    title: "Baked Salmon & Basmati Bowl",
+    category: "Dinner",
+    time: 20,
+    servings: 1,
+    tags: ["quick", "high-protein", "gluten-free"],
+    image: "images/salmon-basmati-bowl.jpg",
+    ingredients: [
+      { item: "130 g salmon fillet", note: "baked or pan-seared" },
+      { item: "150 g cooked basmati rice" },
+      { item: "30 g avocado, diced" },
+      { item: "25 g fresh arugula" },
+      { item: "5 ml truffle oil", note: "to drizzle" },
+      { item: "1 tsp garlic-free seasoning blend", note: "nutritional yeast, sea salt, pepper, dried herbs" }
+    ],
+    steps: [
+      "Season the salmon with sea salt and black pepper. Bake at 200 °C for 12–15 minutes, or pan-sear over medium-high heat, until tender and flaky. Flake coarsely with a fork.",
+      "Arrange the warm basmati, flaked salmon, avocado and arugula in sections in a shallow bowl.",
+      "Drizzle the truffle oil over and scatter the seasoning blend."
+    ],
+    nutrition: { serveWeight: 340, kcal: 525, protein: 33.4, carbs: 46.5, fat: 22.8 }
+  },
 
   {
     id: "grilled-shrimp-pineapple-salad",
